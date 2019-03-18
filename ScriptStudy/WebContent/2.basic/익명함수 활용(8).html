@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>익명함수 활용(8).html</title>
+	<script>
+		function test(){
+			var remove=document.getElementById("will_remove");
+			// document.createElement("만들태그명")
+			// 부모태그객체명.appendChild(추가할자식태그객체명) <-> 부모태그객체명.removeChild(자식태그객체명)
+			var parent=remove.parentNode;
+			parent.removeChild(remove);
+
+			// 형식) 자바스크립트에서도 알람처럼 정해진 시간이 지난 다음에 함수 호출
+			// 형식) setTimeout(호출할 함수명 or 익명함수, 초단위(1000)) -> 1000은 1초
+			setTimeout(function(){
+				document.body.innerHTML=''; // document.body => body태그를 가리키는 예약어
+			}, 3000); // 3초 뒤에 익명함수내용을 실행
+		}
+	</script>
+ </head>
+ <body onload="test()">
+   <h1 id="will_remove">Header</h1>
+   <h1>Header2</h1>
+ </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입폼</title>
+<script>
+   function test(){ //전송 ->자바의 캡슐화->Setter Method
+	   //document.폼객체명.입력양식객체명.속성=값 document.폼객체명.입력양식객체명.함수명()
+	   //이름
+	   if(document.myform.name.value==""){
+		   alert("이름은 필수입력입니다.");//not null
+		   document.myform.name.focus();
+		   return;//탈출문
+	   }
+   //전번
+	   if(document.myform.tel.value==""){
+		   alert("전번은 필수입력입니다.");//not null
+		   document.myform.tel.focus();
+		   return false;
+	   }
+   //암호
+	   if(document.myform.pwd.value==""){
+		   alert("암호는 필수입력입니다.");//not null
+		   document.myform.pwd.focus();
+		   return false; //입력이 완성X
+	   }
+     document.myform.submit();
+       //전송 1=><input type="button"  value="전송"  onclick="test()"> ->수동 전동
+       //              형식) document.폼객체명.submit()  ->수동                          
+       //전송 2=><input type="submit"  value="전송"  onclick="test()"> ->자동 전송
+       //   document.폼객체명.submit()(X)    action="a.jsp" ->자동 전송
+   }
+   
+   function test2(){//암호->암호의 길이를 제대로 입력했는지 체크함수
+	   if(document.myform.pwd.value.length>=4 && document.myform.pwd.value.length<=8 ){
+		   alert("정상적으로 암호를 입력했습니다.")  
+	   }else{
+		   alert("암호는 4자이상 \n 8자이상로 입력요망")
+		   document.myform.pwd.focus();//글자수가 모자르기 때문에 다시 입력받기위해서
+	   }
+   }
+   
+   
+</script>
+</head>
+<body>
+<!-- 
+  전송방법 ->get->사이트에 접속,웹쇼핑->url창뒤에 전송된 데이터 보임(보안에 문제)
+                   post->회원가입,로그인,메일첨부(전송되는 데이터는 데이터 보이지 않음)
+                   action->상대방 컴퓨터의 특정파일에 전송되는 파일
+ -->
+<form  name="myform"  method="post" action="a.jsp">
+   이름:<input type="text" name="name" size="10"><br>
+   전번:<input type="text" name="tel" size="10"><br>
+   암호:<input type="password" name="pwd" size="10"><p>
+   
+   <input type="button"  value="전송"  onclick="test()">
+   <!-- <input type="submit"  value="전송"  onclick="test()"> -->
+   <input type="button"  value="암호입력"  onclick="test2()">
+   <input type="button" value="다시" onclick="">
+</form>
+</body>
+</html>

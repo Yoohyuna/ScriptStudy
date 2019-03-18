@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배경색을 변경</title>
+	<style>
+		div#box{
+			width:200px;
+			height:200px;
+			background:#ffffff;
+			border:2px solid black;
+		}
+	</style>
+	
+	<script>
+		function setRed(){
+			// 배경색에 빨간색을 부여할 태그정보(=객체)를 가져오기
+			var box = document.getElementById("box");
+			//alert(box);
+			// style="background:red" -> 객체명.속성명=속성값;
+			//객체명.상위속성명.하위속성값 = 변경할값(=속성값);
+			box.style.background = "#ff0000";
+		}
+		function setGreen(){
+			var box = document.getElementById("box");
+			box.style.background = "#00ff00";
+		}
+		function setBlue(){
+			var box = document.getElementById("box");
+			box.style.background = "#0000ff";
+		}
+		//추가
+		function setColor(n){
+			var box = document.getElementById("box");
+			var color ="#ffffff";
+			switch(n){
+			case 1:
+				color="#ff0000";
+				break;
+			case 2:
+				color="#00ff00";
+				break;
+			case 3:
+				color="#0000ff";
+				break;
+			}
+			box.style.background = color;
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="Red" onClick="setRed();">
+	<input type="button" value="Green" onClick="setGreen()">
+	<input type="button" value="Blue" onClick="setBlue()">
+	
+	<p> <!-- 비슷한 기능을 가진 함수(하나로 합쳐서 함수를 작성) -->
+	
+	<input type="button" value="Red" onClick="setColor(1);">
+	<input type="button" value="Green" onClick="setColor(2)">
+	<input type="button" value="Blue" onClick="setColor(3)">
+	
+	<p> <!-- id필요 이유 : 1. 스타일시트 적용 2. 자바스크립트 언어필요 -->
+	<!-- <div id="box" style="background:red"></div> -->
+	<div id="box"></div>
+	<div id="box2"></div>
+</body>
+</html>

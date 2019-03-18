@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>DOM의 개요(4).html</title>
+  <!-- 
+	DOM(Document Object Model) => 내가 원하는 특정태그의 내용을 변경시키는 방법(동적으로 -> 프로그래밍 방식)
+	동적화면 디자인 => 이벤트 처리-(함수를 선언-호출)
+  -->
+  <script>
+	function myFunction(){
+		// p태그정보.innerHTML(속성명)=값
+		document.getElementById("exam").innerHTML="변경후 연습입니다.";
+	}
+  </script>
+ </head>
+ <body>
+   <p id="exam">변경전</p> <!-- <p>변경전</p> 변경되었습니다. -->
+   <input type="button" value="변경" onclick="myFunction()">
+ </body>
+</html>

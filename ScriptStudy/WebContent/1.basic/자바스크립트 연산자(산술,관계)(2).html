@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>자바스크립트 연산자(산술,관계)(2).html</title>
+  <!-- <style></style> -->
+  <!-- 연산자(operator) -> 계산을 하기 위한 기호
+		1. 산술연산자 -> 사칙연산(+, -, *, /, %)
+							단항산술연산자 -> 3, -3 -> +, -
+							이항산술연산자 -> 3+4 -> 3(계산대상자(항)), +(연산자), 4(항)
+		2. 관계연산자(=대소(비교)연산자) : >,  >=,  <,  <=,  ==,  !=
+  -->
+  <script>
+	// 모든 문장은 문장이 끝날 때마다 ;을 부여한다. , 일일이 변수 선언하지 않아도 된다(메모리관리)
+	// 산술연산자
+	document.write("연산자(산술,관계)<p>");
+	// +
+	var res=20+30;
+	document.write("res=>"+res+"<br>");
+	// -
+	res=20-30;
+	document.write("res=>"+res+"<br>");
+	// *
+	res=20*30;
+	document.write("res=>"+res+"<br>");
+	// /
+	res=20/30;
+	document.write("res=>"+res+"<br>");
+	// 변수를 선언 -> 한꺼번에 여러 개를 저장
+	var a,b,c;
+	a=5, b=10;
+	c=a+b;
+	document.write("계산값 c=>"+c+"<p>");
+
+	// 관계연산자
+	c=a>b; // c=5>10 => false값을 c변수에 저장
+	document.write("관계 c=>"+c+"<br>");
+	c=5*(7+4);
+	document.write("관계 c=>"+c+"<br>"); // 중복된 코딩 -> 함수가 편리
+	c=(a==b); // a와 b가 같냐 -> false
+	document.write("관계 c=>"+c+"<br>");
+  </script>
+ </head>
+ <body>
+   
+ </body>
+</html>

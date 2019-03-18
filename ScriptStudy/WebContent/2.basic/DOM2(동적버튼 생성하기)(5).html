@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>DOM2(동적버튼 생성하기)(5).html</title>
+  <script>
+  	// 전역변수 : 프로그램이 실행될 때 메모리에 잡히는 변수
+	var count=0; // 버튼을 누를 때마다 증가하는 버튼의 갯수
+
+	function appendItem(){ // 추가
+		//함수호출할 때마다 버튼의 갯수를 자동으로 증가
+		count=count+1;
+		// 1.<div(생성할 태그명)></div> 컴퓨터의 메모리에 생성
+		// 형식) document.createElement("태그명")
+		var newItem = document.createElement("div"); // <div></div>
+		// 2. 똑같은 태그를 여러개 생성 -> 구분하기 위해서 속성명=속성값 부여
+		// 형식) 생성시킨 태그 변수명.setAttribute("생성시킬 속성명","부여할 값")
+		newItem.setAttribute("id","item_"+count); // <div id="item_1"></div>
+		// 3. 내용 추가 1)태그정보.innerHTML=값  2)createTextNode함수 이용
+		var html='새로 추가된 아이템['+count+']'+'<input type="button" value="삭제" onclick="removeItem('+count+')" />';
+		newItem.innerHTML=html; // =newItem.createTextNode(html)
+		// 4. 부모태그변수명.appendChild(새로 생성시킨 태그명)
+		var itemList=document.getElementById("itemList");
+			itemList.appendChild(newItem);
+	}
+
+	function removeItem(idCount){ // 삭제할 id값을 받아서 삭제
+		//alert(idCount)
+		// 형식) 부모태그명.removeChild(삭제시킬 자식태그 id값)
+		var item=document.getElementById("item_"+idCount);
+		var itemList=document.getElementById("itemList");
+		itemList.removeChild(item);
+	}
+  </script>
+ </head>
+ <body>
+   <input type="button" value="추가" onclick="appendItem()">
+   <div id="itemList">
+	<!-- <div id="item_1">새로 추가된 아이템 <input type="button" value="삭제"></div>
+	<div id="item_2">새로 추가된 아이템 <input type="button" value="삭제"></div> -->
+   </div>
+   <hr>
+   <div id="itemList2">
+   
+   </div>
+ </body>
+</html>

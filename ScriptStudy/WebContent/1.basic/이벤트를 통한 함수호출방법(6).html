@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>이벤트를 통한 함수호출방법(6).html</title>
+	<script>
+	/*
+		이벤트(event) -> 운영체제가 인식가능한 사용자들의 모든 행동 양식(키보드 작업, 마우스 작업, 터치 등) p145
+			click, change
+		이벤트핸들러 -> 특정 이번트가 발생되었을 때 호출되어서 처리해주는 함수
+	*/
+		function print(){
+			alert("단순하고 반복적인 일만하는 함수");
+		}
+		function print2(su){
+			alert("입력받은 값은"+su+"입니다<p>");
+		}
+		function print3(su, su2){
+			alert(su*su2);
+		}
+		
+	</script>
+
+ </head>
+ <body> <!-- 1. 버튼클릭, 2. 링크 클릭 
+					입력양식 중에서 이벤트 발생 -> 특정함수 호출 -> on발생될이벤트종류명="실행시킬 자바스크립트 구문 또는 호출할 함수명"
+					" "안에는 ' ' -> "  ' '  "
+				window.close() => 프로그램 종료 기능
+				window.alert() => window객체만 생략 가능
+			-->
+   <!-- <input type="button" value="단순버튼" onclick="alert('단순버튼');alert('연습2')"> -->
+   <input type="button" value="단순버튼" onclick="print()">
+   <input type="button" value="계산목적" onclick="print3(23,45)">
+   <input type="button" value="창닫기" onclick="window.close()">
+   <a href="#" onclick="print()">링크문자열</a>
+ </body>
+</html>

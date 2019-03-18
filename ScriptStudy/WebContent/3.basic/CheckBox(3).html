@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>여러항목을 다중선택? </title>
+<script>
+    function test(){
+    	//만약에 1.gif를 선택했다면 ~.checked==true은 생략이 가능
+    	sel="";// 선택한 그림을 저장할 변수로 선언
+    	
+    	if(document.myform.a1.checked==true)
+    		sel+="1번 ";// sel=sel+"1번"
+    		
+        if(document.myform.a2.checked)
+        	sel+="2번 "; //"1번"+"2번"->"1번 2번"
+        	
+       if(document.myform.a3.checked)
+    	   sel+="3번 ";
+    	
+    		alert(sel+" 그림이 맘에 드시는 군요!");
+    }
+</script>
+</head>
+<!--  
+   화면디자인한 이미지,글->마우스 오른쪽버튼 금지, 드래그 & 드롭 금지
+   oncontextmenu="return false" ->마우스 오른쪽버튼 금지
+   ondragstart="return false" ->드래그 시작 금지
+   onselectstart="return false"->선택(블럭지정) 금지 
+ -->
+<body oncontextmenu="return false"
+           ondragstart="return false"
+           onselectstart="return false">
+ <form name="myform">
+   맘에 드시는 그림을 선택하세요<p>
+    <!--
+          checkBox=>여러개를 동시에 한개이상 선택이 가능->배열을 사용하지 않는다.
+       -->
+   <input type="checkbox" name="a1">1.<img src="../images/1.gif"><p>
+   <input type="checkbox" name="a2">2.<img src="../images/2.gif"><p>
+   <input type="checkbox" name="a3">3.<img src="../images/3.gif"><p>
+   <input type="button" value="확인" onclick="test()">
+ </form>
+</body>
+</html>
+
+

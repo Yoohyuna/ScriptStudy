@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>익명함수 선언 및 호출(7).html</title>
+	<script>
+		/*
+			함수-내장함수 or 사용자 정의 함수
+									1) 함수의 이름이 있는 함수 -> 함수선언 전 후 모두 호출가능
+									2) 함수의 이름이 없는 함수(=익명함수) -> 차이점:호출할 때(익명함수를 먼저 선언 후 호출가능)
+										var 변수명=function(){...} // 변수명이 함수이름 대신임. 변수명();
+		*/
+		// 1. 매개변수X, 반환값X
+/*		
+		print();
+
+		function print(){
+			//함수 내부에서 다른 함수 호출이 가능
+			alert("단순하고 반복적인 일만하는 함수");
+		}
+
+		print();
+*/
+		// 추가
+		//play(); // 익명함수는 함수를 만들기 전에는 호출이 불가능 -> 에러
+		var play=function(){
+			document.write("운동을 좋아합니다.<br>");
+		}
+		play(); // 익명함수를 만들고 나서만 호출 가능
+ 
+		// 2. 매개변수O, 반환값X -> 입력=>출력,계산,저장,조회
+		var print2=function(su){
+			alert("입력받은 값은"+su+"입니다<p>");
+		}
+		print2(23);
+
+		// 3. 매개변수 2개, 반환값X -> 계산목적
+		var print3=function(su, su2){
+			alert(su*su2); // document.write("su*su2=>"+(su*su2)+"<br>");
+		}
+		print3(10,20);
+
+		// 4. 매개변수 2개, 반환값O -> 복잡한 계산, 웹 상에서 호출
+		var print4=function(su, su2){
+			var result = su*su2;
+			return result;
+		}
+		var cal=print4(3,7);
+		alert(cal);
+
+	</script>
+
+ </head>
+ <body>
+   
+ </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>콤보박스 선택하기</title>
+<script>
+    function fg_color(form){ //매개변수의 자료형 X ->form=document.f_list.form
+    	//var list=document.f_list.form.selectedIndex;
+        var list=form.selectedIndex;
+        //alert(list)
+        /*
+         형식) document.fgColor(글자색),bgColor(배경색)=선택한 항목의 색깔
+         document.f_list.form.options[내가 선택한 인덱스번호].text(겉의 항목을 구할때 사용)  
+         document.f_list.form.options[내가 선택한 인덱스번호].value(내부의 항목을 구할때 사용)
+        */
+        //alert(document.f_list.form.options[list].value)
+        //document.fgColor=document.f_list.form.options[f_list.form.selectedIndex].value
+        //document.fgColor=form.options[list].value;//글자색
+        document.bgColor=form.options[list].value;
+    }
+</script>
+</head>
+<body>
+<!--
+    option ->selected 속성->기본적으로 선택되어져서 나오는 항목을 지정할때 사용
+    size=n(항목수)을 부여->listbox가 된다. multiple(다중 선택할때 사용)
+  -->
+ <h3>글자색 바꾸기</h3>
+  원하시는 색상을 선택하시면 글자의 색깔이 변경됩니다.<p>
+  
+  <form name="f_list">
+      <!-- <select name="form" size="4" multiple> -->
+      <select name="form" onchange="fg_color(document.f_list.form)">
+          <option value="green">초록색</option>  
+          <option value="blue" selected>파랑색</option>
+          <option value="orange">오렌지색</option>
+          <option value="gray">회색</option>
+      </select>
+  </form>
+</body>
+</html>
+

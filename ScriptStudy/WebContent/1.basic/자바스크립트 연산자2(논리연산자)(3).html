@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>자바스크립트 연산자2(논리연산자)(3).html</title>
+  <!-- 
+	논리연산자 => 참거짓을 판별할 수 있는 연산자(true or false)
+	명제(and, or, not) -> && , || , !
+	&&
+		T T -> T
+		T F -> F
+		F T -> F
+		F F -> F
+	||
+		T T -> T
+		T F -> T
+		F T -> T
+		F F -> F
+	!
+		T -> F
+		F -> T
+  -->
+  <script>
+	var su1=true;
+	document.write("su1->"+su1+"<p>");
+	// &&
+	su1=(2>5) && (5<7) // F && T -> F
+	document.write("su1->"+su1+"<p>");
+	// ||
+	su1=(2>5) || (5<7) // F || T -> T
+	document.write("su1->"+su1+"<p>");
+  </script>
+ </head>
+ <body>
+   
+ </body>
+</html>

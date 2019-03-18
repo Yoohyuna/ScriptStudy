@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>toggle(1).html</title>
+  <script>
+  // 호출할 함수를 선언 -> 함수를 만드는 절차
+	function toggle(){
+		//alert("toggle함수 호출됨()");
+		// 변수 => 1. 입출력 프로그램을 작성할 때 2. 계산할 때 3. 복잡한 값을 기억시킬 때(수식이 길때)
+		var b_val=document.getElementById("b_name");
+		//var b_val=document.getElementById("b_name").value;
+		//alert(b_val); // [object ~~] : 그 버튼의 정보를 얻어왔음
+								// 버튼정보.속성명
+
+		// 둘 중의 하나 값을 선택해서 출력 -> 제어문 if문
+		// (1)
+		/*
+		if (b_val=="네이버") // 버튼의 정보.속성명=변경할값
+			//b_val="다음";
+			// window.document.form이름.입력양식이름.속성명
+			document.f.b_name.value="다음";
+		else
+			//b_val="네이버";
+			document.f.b_name.value="네이버";
+		// (2) 삼항연산자 -> if문 대용 -> 형식) 변수명=(조건식)?참:거짓
+		*/
+		var text=(b_val.value=="네이버")?"다음":"네이버";
+		b_val.value=text;
+	}
+  </script>
+ </head>
+ <body>
+   <center>
+	<h1>버튼을 눌러주세요!</h1>
+	<form name="f">
+	<!-- 1. name (각각의 태그를 구분하는 이름) - 구버전(javascript)
+		   2. id (각각의 태그를 구분하는 이름) - 신버전(jQuery, bootstrap)
+	-->
+		<input type="button" value="네이버" name="b_name" id="b_name" onclick="toggle()">
+		<input type="button" value="버튼연습" name="b_button" id="b_button">
+	</form>
+   </center>
+ </body>
+</html>

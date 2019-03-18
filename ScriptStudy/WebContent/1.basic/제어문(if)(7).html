@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>제어문(if)(7).html</title>
+  <!-- 
+	변수, 연산자(산술,관계,논리) -> 함수종류 및 작성법
+	1. alert("경고문장") 2. var 변수명=prompt("입력~?") -> 입력받을 때 처리
+	3. var 변수명=confirm("확인하는 문구?") -> 사용자에게 알려주는 역할
+
+	자바스크립트 문장 -> 1.순차문 -> 써진 순서대로 실행되는 문장
+								2. 제어문 -> 주어진 조건에 따라서 실행이 될수도 안될수도 있는 구문
+
+	형식) 둘 중에 하나 값을 체크할 때 => if문
+			if (조건식)
+				참인 실행문장;
+			else
+				거짓인 문장;
+  -->
+ </head>
+ <body>
+   <script>
+	document.write("제어문 연습1<br>");
+	var ans= confirm("정말로 회원탈퇴 하시겠습니까?");
+	document.write("ans=>"+ans);
+	if (ans==true) { // 확인버튼을 눌렀다면
+		alert("탈퇴 되었습니다");
+	} else { // 취소버튼을 눌렀다면
+		alert("취소 되었습니다");
+	}
+   </script>
+ </body>
+</html>

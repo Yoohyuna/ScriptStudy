@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>함수의 선언 및 호출유형(5).html</title>
+	<script>
+		// 1. 매개변수X, 반환값X
+		function print(){
+			//함수 내부에서 다른 함수 호출이 가능
+			alert("단순하고 반복적인 일만하는 함수");
+		}
+		// 2. 매개변수O, 반환값X -> 입력=>출력,계산,저장,조회
+		function print2(su){
+			alert("입력받은 값은"+su+"입니다<p>");
+		}
+		// 3. 매개변수 2개, 반환값X -> 계산목적
+		function print3(su, su2){
+			alert(su*su2); // document.write("su*su2=>"+(su*su2)+"<br>");
+		}
+		// 4. 매개변수 2개, 반환값O -> 복잡한 계산, 웹 상에서 호출
+		function print4(su, su2){
+			var result = su*su2;
+			return result;
+		}
+	</script>
+
+ </head>
+ <body>
+   <script>
+	//print5(); // 없는 함수를 호출 -> 에러 -> Uncaught ReferenceError: print5 is not defined
+	print();
+	print2(23); // 호출과 동시에 매개변수 23을 전달
+	print3(10,20);
+	var res=print4(10,20); // var 반환될 변수명 = 호출함수명(,,,);
+	document.write("반환받은 결과값 res="+res+"입니다.");
+   </script>
+ </body>
+</html>
